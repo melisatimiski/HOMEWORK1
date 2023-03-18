@@ -1,0 +1,25 @@
+//username finding interface //
+#include <stdio.h>
+int mlsStrcat(char second[], const char first[]) 
+{
+    int i, j;
+    for(i=0; second[i]!='\0'; i++); //end of the second sitring
+    for(j=0; first[j]!='\0'; j++)   //ikincisi birincisinin harf sayısına kadar sayıp üzerine eklenir
+    {
+        second[i+j] = first[j];
+    }
+}
+
+int main(void) 
+{
+    char name[25]; 
+    char surname[25]; 
+
+    printf("Enter your name: "); 
+    scanf("%s", name); 
+    printf("Enter your surname: "); 
+    scanf("%s", surname); 
+    
+    mlsStrcat(name, surname);
+    printf("Best match username is: %s\n", name);
+}
